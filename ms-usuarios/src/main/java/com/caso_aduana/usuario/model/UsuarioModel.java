@@ -3,6 +3,7 @@ package com.caso_aduana.usuario.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,8 +28,9 @@ public class UsuarioModel {
     private String run;
 
     @NotNull
+    @Pattern(regexp = "[0-9Kk]")
     @Column(name = "dv", nullable = false, length = 1)
-    private Character dv;
+    private String dv;
 
     @NotNull
     @Size(max = 50)
