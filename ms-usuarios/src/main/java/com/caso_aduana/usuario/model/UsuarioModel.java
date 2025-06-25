@@ -3,6 +3,7 @@ package com.caso_aduana.usuario.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "usuario")
 @Data
 @NoArgsConstructor
@@ -23,12 +25,13 @@ public class UsuarioModel {
 
     @NotNull
     @Size(max = 8)
-    @Column(name = "run", nullable = false, length = 8)
+    @Column(name = "run", nullable = false, length = 8, unique = true)
     private String run;
 
     @NotNull
+    @Pattern(regexp = "[0-9Kk]")
     @Column(name = "dv", nullable = false, length = 1)
-    private Character dv;
+    private String dv;
 
     @NotNull
     @Size(max = 50)
