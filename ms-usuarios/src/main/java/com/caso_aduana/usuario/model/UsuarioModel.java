@@ -23,7 +23,7 @@ public class UsuarioModel {
 
     @NotNull
     @Size(max = 8)
-    @Column(name = "run", nullable = false, length = 8)
+    @Column(name = "run", nullable = false, length = 8, unique = true)
     private String run;
 
     @NotNull
