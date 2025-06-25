@@ -36,9 +36,8 @@
     </dependencyManagement>
 
     <modules>
-        <module>ms-empleados</module>
-        <module>ms-pdi</module>
         <module>ms-usuarios</module>
+        <module>ms_tramites</module>
     </modules>
 
     <build>
