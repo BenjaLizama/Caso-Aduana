@@ -11,15 +11,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 public class AgricolaModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+
+    @Column(nullable = false)
     private  String nombre;
-    @Column
+
+    @Column(nullable = false)
     private Integer cantidad;
-    @Column
+
+    @Column(nullable = false)
     private boolean permitido;
-    @Column
+
+    @Column(nullable = false)
     private  boolean requierein;
 }

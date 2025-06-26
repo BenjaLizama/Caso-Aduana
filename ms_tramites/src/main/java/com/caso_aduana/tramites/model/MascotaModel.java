@@ -15,11 +15,10 @@ public class MascotaModel {
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
 
- @Column
+ @Column(nullable = false)
  private String nombre;
 
- @Column
- private String raza;
+
 
 
 }
