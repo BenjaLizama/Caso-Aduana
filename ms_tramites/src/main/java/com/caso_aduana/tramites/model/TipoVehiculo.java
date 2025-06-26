@@ -1,25 +1,26 @@
 package com.caso_aduana.tramites.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name = "agricola")
+@Table(name = "tipovehiculo")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class AgricolaModel {
+public class TipoVehiculo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private  String nombre;
-    @Column
-    private Integer cantidad;
-    @Column
-    private boolean permitido;
-    @Column
-    private  boolean requierein;
+    private String ntipovehiculo;
+
+    @OneToMany(mappedBy = "tipovehiculo")
+    @JsonBackReference
+    private VehiculoModel vehiculoModel;
+
 }
